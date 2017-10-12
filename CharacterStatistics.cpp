@@ -1,5 +1,5 @@
 //
-//  CharacterLog.cpp
+//  CharacterStatistics.cpp
 //  Char Statistics
 //
 //  Created by Joseph Lyons on 10/11/17.
@@ -7,9 +7,9 @@
 //
 
 #include <iostream>
-#include "CharacterLog.hpp"
+#include "CharacterStatistics.hpp"
 
-CharacterLog::CharacterLog()
+CharacterStatistics::CharacterStatistics()
 {
     // Zero out array
     for (int i = 0; i < 256; i++)
@@ -20,13 +20,13 @@ CharacterLog::CharacterLog()
     totalCharacters = 0;
 }
 
-void CharacterLog::logCharacter(const char &letter)
+void CharacterStatistics::logCharacter(const char &letter)
 {
     characterLog[(int) letter] += 1;
     totalCharacters++;
 }
 
-void CharacterLog::printLog() const
+void CharacterStatistics::printLog() const
 {
     // Print printable characters (skip non-printables)
     for (int i = 0; i < 256; i++)
@@ -40,7 +40,7 @@ void CharacterLog::printLog() const
     }
 }
 
-float CharacterLog::vowelStatistics(const bool &includeY)
+float CharacterStatistics::vowelStatistics(const bool &includeY)
 {
     int vowelCount = 0;
     
@@ -64,7 +64,7 @@ float CharacterLog::vowelStatistics(const bool &includeY)
     return vowelCount / (float) getTotalCharacters();
 }
 
-int CharacterLog::getTotalCharacters() const
+int CharacterStatistics::getTotalCharacters() const
 {
     return totalCharacters;
 }
