@@ -50,6 +50,14 @@ void CharacterStatistics::logCharacter(const char &letter)
     totalCharacters++;
 }
 
+void CharacterStatistics::logStringOfCharacters(const std::string &string)
+{
+    for (int i = 0; i < string.size(); i++)
+    {
+        logCharacter(string[i]);
+    }
+}
+
 void CharacterStatistics::printLog() const
 {
     for (int i = 0; i < 256; i++)

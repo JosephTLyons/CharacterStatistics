@@ -20,6 +20,7 @@ private:
 public:
     CharacterStatistics();
     void logCharacter(const char &letter);
+    void logStringOfCharacters(const std::string &string);
     void printLog() const;
     float vowelStatistics(const bool &includeY) const;
     
