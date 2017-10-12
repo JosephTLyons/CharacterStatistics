@@ -15,6 +15,8 @@ private:
     int characterLog[256] = {};
     int totalCharacters;
     
+    int countVowels(const bool &includeY) const;
+    
 public:
     CharacterStatistics();
     void logCharacter(const char &letter);

@@ -20,6 +20,30 @@ CharacterStatistics::CharacterStatistics()
     totalCharacters = 0;
 }
 
+int CharacterStatistics::countVowels(const bool &includeY) const
+{
+    int vowelCount = 0;
+    
+    vowelCount += characterLog[(int) 'a'];
+    vowelCount += characterLog[(int) 'A'];
+    vowelCount += characterLog[(int) 'e'];
+    vowelCount += characterLog[(int) 'E'];
+    vowelCount += characterLog[(int) 'i'];
+    vowelCount += characterLog[(int) 'I'];
+    vowelCount += characterLog[(int) 'o'];
+    vowelCount += characterLog[(int) 'O'];
+    vowelCount += characterLog[(int) 'u'];
+    vowelCount += characterLog[(int) 'U'];
+    
+    if (includeY)
+    {
+        vowelCount += characterLog[(int) 'y'];
+        vowelCount += characterLog[(int) 'Y'];
+    }
+    
+    return vowelCount;
+}
+
 void CharacterStatistics::logCharacter(const char &letter)
 {
     characterLog[(int) letter] += 1;
@@ -41,26 +65,7 @@ void CharacterStatistics::printLog() const
 
 float CharacterStatistics::vowelStatistics(const bool &includeY) const
 {
-    int vowelCount = 0;
-    
-    vowelCount += characterLog[(int) 'a'];
-    vowelCount += characterLog[(int) 'A'];
-    vowelCount += characterLog[(int) 'e'];
-    vowelCount += characterLog[(int) 'E'];
-    vowelCount += characterLog[(int) 'i'];
-    vowelCount += characterLog[(int) 'I'];
-    vowelCount += characterLog[(int) 'o'];
-    vowelCount += characterLog[(int) 'O'];
-    vowelCount += characterLog[(int) 'u'];
-    vowelCount += characterLog[(int) 'U'];
-    
-    if (includeY)
-    {
-        vowelCount += characterLog[(int) 'y'];
-        vowelCount += characterLog[(int) 'Y'];
-    }
-    
-    return vowelCount / (float) getTotalCharacters();
+    return countVowels(includeY) / (float) getTotalCharacters();
 }
 
 int CharacterStatistics::getTotalCharacters() const
