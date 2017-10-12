@@ -28,7 +28,6 @@ void CharacterStatistics::logCharacter(const char &letter)
 
 void CharacterStatistics::printLog() const
 {
-    // Print printable characters (skip non-printables)
     for (int i = 0; i < 256; i++)
     {
         // Only print characters that have been logged
