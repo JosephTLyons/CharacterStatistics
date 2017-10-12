@@ -19,7 +19,7 @@ public:
     CharacterStatistics();
     void logCharacter(const char &letter);
     void printLog() const;
-    float vowelStatistics(const bool &includeY);
+    float vowelStatistics(const bool &includeY) const;
     
     int getTotalCharacters() const;
 };

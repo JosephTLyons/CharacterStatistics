@@ -40,7 +40,7 @@ void CharacterStatistics::printLog() const
     }
 }
 
-float CharacterStatistics::vowelStatistics(const bool &includeY)
+float CharacterStatistics::vowelStatistics(const bool &includeY) const
 {
     int vowelCount = 0;
     
