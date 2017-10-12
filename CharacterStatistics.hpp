@@ -12,8 +12,8 @@
 class CharacterStatistics
 {
 private:
-    int characterLog[256] = {};
-    int totalCharacters;
+    long unsigned int characterLog[256] = {};
+    long unsigned int totalCharacters;
     
     int countVowels(const bool &includeY) const;
     
