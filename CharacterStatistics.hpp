@@ -15,7 +15,7 @@ private:
     long unsigned int characterLog[256] = {};
     long unsigned int totalCharacters;
     
-    int countVowels(const bool &includeY) const;
+    long unsigned int countVowels(const bool &includeY) const;
     
 public:
     CharacterStatistics();
@@ -24,7 +24,7 @@ public:
     void printLog() const;
     float vowelStatistics(const bool &includeY) const;
     
-    int getTotalCharacters() const;
+    long unsigned int getTotalCharacters() const;
 };
 
 #endif /* CharacterStatistics_hpp */

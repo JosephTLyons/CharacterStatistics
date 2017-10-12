@@ -20,7 +20,7 @@ CharacterStatistics::CharacterStatistics()
     totalCharacters = 0;
 }
 
-int CharacterStatistics::countVowels(const bool &includeY) const
+long unsigned  CharacterStatistics::countVowels(const bool &includeY) const
 {
     int vowelCount = 0;
     
@@ -76,7 +76,7 @@ float CharacterStatistics::vowelStatistics(const bool &includeY) const
     return countVowels(includeY) / (float) getTotalCharacters();
 }
 
-int CharacterStatistics::getTotalCharacters() const
+long unsigned int CharacterStatistics::getTotalCharacters() const
 {
     return totalCharacters;
 }
