@@ -21,6 +21,7 @@ public:
     CharacterStatistics();
     void logCharacter(const char &letter);
     void logStringOfCharacters(const std::string &string);
+    void logFileOfCharacters(const char *filePath);
     void printLog() const;
     float vowelStatistics(const bool &includeY) const;
     

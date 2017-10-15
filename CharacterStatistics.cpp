@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "CharacterStatistics.hpp"
 
 CharacterStatistics::CharacterStatistics()
@@ -56,6 +57,28 @@ void CharacterStatistics::logStringOfCharacters(const std::string &string)
     {
         logCharacter(string[i]);
     }
+}
+
+void CharacterStatistics::logFileOfCharacters(const char *filePath)
+{
+    std::ifstream fileIn;
+    
+    fileIn.open(filePath);
+    
+    if (fileIn.fail())
+    {
+        return;
+    }
+    
+    char letter = fileIn.get();
+    
+    while(!fileIn.eof())
+    {
+        logCharacter(letter);
+        letter = fileIn.get();
+    }
+    
+    fileIn.close();
 }
 
 void CharacterStatistics::printLog() const
