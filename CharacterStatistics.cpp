@@ -21,7 +21,7 @@ CharacterStatistics::CharacterStatistics()
     totalCharacters = 0;
 }
 
-long unsigned  CharacterStatistics::countVowels(const bool &includeY) const
+long unsigned  CharacterStatistics::countVowels (const bool &includeY) const
 {
     int vowelCount = 0;
     
@@ -45,25 +45,25 @@ long unsigned  CharacterStatistics::countVowels(const bool &includeY) const
     return vowelCount;
 }
 
-void CharacterStatistics::logCharacter(const char &letter)
+void CharacterStatistics::logCharacter (const char &letter)
 {
     characterLog[(int) letter] += 1;
     totalCharacters++;
 }
 
-void CharacterStatistics::logStringOfCharacters(const std::string &string)
+void CharacterStatistics::logStringOfCharacters (const std::string &string)
 {
     for (int i = 0; i < string.size(); i++)
     {
-        logCharacter(string[i]);
+        logCharacter (string[i]);
     }
 }
 
-void CharacterStatistics::logFileOfCharacters(const char *filePath)
+void CharacterStatistics::logFileOfCharacters (const char *filePath)
 {
     std::ifstream fileIn;
     
-    fileIn.open(filePath);
+    fileIn.open (filePath);
     
     if (fileIn.fail())
     {
@@ -74,7 +74,7 @@ void CharacterStatistics::logFileOfCharacters(const char *filePath)
     
     while(!fileIn.eof())
     {
-        logCharacter(letter);
+        logCharacter (letter);
         letter = fileIn.get();
     }
     
@@ -94,7 +94,7 @@ void CharacterStatistics::printLog() const
     }
 }
 
-float CharacterStatistics::vowelStatistics(const bool &includeY) const
+float CharacterStatistics::vowelStatistics (const bool &includeY) const
 {
     return countVowels(includeY) / (float) getTotalCharacters();
 }
