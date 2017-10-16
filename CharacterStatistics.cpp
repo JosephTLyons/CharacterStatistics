@@ -47,7 +47,7 @@ long unsigned  CharacterStatistics::countVowels (const bool &includeY) const
 
 void CharacterStatistics::logCharacter (const char &letter)
 {
-    characterLog[(int) letter] += 1;
+    characterLog[(int) letter]++;
     totalCharacters++;
 }
 
