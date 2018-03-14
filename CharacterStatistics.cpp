@@ -96,7 +96,7 @@ void CharacterStatistics::printLog() const
 
 float CharacterStatistics::vowelStatistics (const bool &includeY) const
 {
-    return countVowels(includeY) / (float) getTotalCharacters();
+    return countVowels (includeY) / (float) getTotalCharacters();
 }
 
 long unsigned int CharacterStatistics::getTotalCharacters() const
